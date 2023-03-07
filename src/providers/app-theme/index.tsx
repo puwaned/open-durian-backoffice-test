@@ -11,7 +11,8 @@ const AppThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
         token: {
           colorPrimary: "#2F9A5D",
           controlHeight: 40,
-          colorText: "white",
+          // colorText: "white",
+          colorTextLabel: "white",
         },
       }}
     >
