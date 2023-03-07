@@ -1,4 +1,5 @@
 import { HashRouter, useRoutes } from "react-router-dom";
+import AppThemeProvider from "./providers/app-theme";
 import { APP_ROUTE } from "./routes";
 
 const Routes = () => {
@@ -9,7 +10,9 @@ const Routes = () => {
 function App() {
   return (
     <HashRouter>
-      <Routes />
+      <AppThemeProvider>
+        <Routes />
+      </AppThemeProvider>
     </HashRouter>
   );
 }

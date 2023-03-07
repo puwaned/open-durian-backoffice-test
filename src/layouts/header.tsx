@@ -1,5 +1,6 @@
 import { MenuOutlined } from "@ant-design/icons";
 import { Col, Dropdown, Image, Layout, MenuProps, Row, Typography } from "antd";
+import { useNavigate } from "react-router-dom";
 import { AppLogoImage } from "../assets/images";
 
 const AppHeader = () => {
@@ -23,10 +24,15 @@ const AppHeader = () => {
 };
 
 const AppDropdownMenu = () => {
+  const navigate = useNavigate();
+
   const items: MenuProps["items"] = [
     {
       key: "1",
       label: "ออกจากระบบ",
+      onClick: () => {
+        navigate("/login", { replace: true });
+      },
     },
   ];
 

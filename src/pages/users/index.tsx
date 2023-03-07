@@ -1,7 +1,7 @@
 
 
 const UserPage = () => {
-    return <div>asd</div>
+    return <div>user</div>
 }
 
 export default UserPage
