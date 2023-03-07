@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 
 const AppContent = () => {
   return (
-    <Layout.Content className="p-5">
+    <Layout.Content>
       <React.Suspense>
         <Outlet />
       </React.Suspense>
