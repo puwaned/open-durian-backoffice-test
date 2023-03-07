@@ -4,7 +4,7 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import { Col, Layout, Row, Typography } from "antd";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import tw from "twin.macro";
 
@@ -89,10 +89,17 @@ const SiderItemContainer = styled.div<{ $isActive: boolean }>`
 
 const SiderItem: React.FC<ISiderItem> = ({ label, to, icon }) => {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   const Icon = icon;
+
   return (
-    <SiderItemContainer $isActive={pathname === to}>
+    <SiderItemContainer
+      $isActive={pathname === to}
+      onClick={() => {
+        navigate(to, { replace: true });
+      }}
+    >
       <Row className="h-full" align="middle" gutter={12}>
         <Col>
           <Icon style={{ fontSize: 24, color: "white" }} />
